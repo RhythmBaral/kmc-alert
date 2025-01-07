@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                 const Text(
                   "Kathmandu Metropolitian City",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
                     color: Colors.red,
                     fontFamily: "f1",
                     fontWeight: FontWeight.bold,
@@ -45,10 +45,10 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 _buildPoliceModule(),
+                _changelanguage(),
                 GridView.count(
                   shrinkWrap: true,
                   primary: false,
-                  padding: const EdgeInsets.all(10),
                   crossAxisSpacing: 10,
                   crossAxisCount: 3,
                   children: [
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
         print("print");
       },
       child: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(10),
         child: Container(
           width: 100,
           height: 100,
@@ -98,6 +98,49 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _changelanguage() {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      width: double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Send Alert Message",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              print("object");
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  "assets/images/globe.png",
+                  width: 20,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  "English",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -130,7 +173,9 @@ class _HomePageState extends State<HomePage> {
               new SizedBox(
                 width: 100,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print("object");
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
                     padding: const EdgeInsets.symmetric(vertical: 10),
